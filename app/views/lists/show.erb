@@ -9,3 +9,9 @@
         <li><input type="checkbox"> <%= value %></li>
     <% end %>
 </ol>
+
+<br><br>
+<form method="POST" action="/lists/<%= @list.id %>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Bucket List">
+</form>

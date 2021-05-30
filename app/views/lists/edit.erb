@@ -1,29 +1,29 @@
+<h1>Update: <%= @list.name %></h1><br>
+
 <form method="POST" action="/lists/<%= @list.id %>">
 <input type="hidden" id="hidden" name="_method" value="PATCH">
 
-<h1>Update: <%= @list.name %></h1><br>
+    <img src="<%= @list.image %>" alt="Bucket List image" width="200px" height="auto"><br>
+    <strong><label for="update_image">Update Image:</label></strong>
+        <input type="text" id="update_image" name="image" value="<%= @list.image %>">
+    <br><br>
 
-<img src="<%= @list.image %>" alt="Bucket List image" width="200px" height="auto"><br>
-<strong><label for="update_image">Update Image:</label></strong>
-<input type="text" id="update_image" name="image" value="<%= @list.image %>">
-<br><br>
+    <strong><label for="update_list_name">Update Name:</label></strong><br>
+        <%= @list.name %> <input type="text" id="update_list_name" name="name" value="<%= @list.name %>">
+    <br><br>
 
-<strong><label for="update_list_name">Update Name:</label></strong><br>
-<%= @list.name %> <input type="text" id="update_list_name" name="name" value="<%= @list.name %>">
-<br><br>
+    <strong><label for="update_list_description">Update Description:</label></strong><br>
+        <textarea id="update_list_description" name="description" row="auto" cols="100"><%= @list.description %></textarea>
+    <br><br>
 
-<strong><label for="update_list_description">Update Description:</label></strong><br>
-<textarea id="update_list_description" name="description" row="auto" cols="100"><%= @list.description %></textarea>
-<br><br>
+    <strong><label for="update_list_to_do">Update List:</label></strong>
+    <ol>
+        <% @list.to_do.split(",").each do |value| %>
+            <li><%= value %></li>
+        <% end %>
+    </ol>
+        <textarea type="text" id="update_list_to_do" name="to_do" row ="auto" cols="100"><%= @list.to_do %></textarea>
+    <br><br>
 
-<strong><label for="update_list_to_do">Update List:</label></strong>
-<ol>
-    <% @list.to_do.split(",").each do |value| %>
-        <li><%= value %></li>
-    <% end %>
-</ol>
-<textarea type="text" id="update_list_to_do" name="to_do" row ="auto" cols="100"><%= @list.to_do %></textarea>
-<br><br>
-
-<input type="submit" value="Update List">
+    <input type="submit" value="Update List">
 </form>
