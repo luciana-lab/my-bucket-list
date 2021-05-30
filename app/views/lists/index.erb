@@ -1,0 +1,10 @@
+<h2>Most Popular Bucket Lists</h2>
+
+<ul>
+    <% @lists.each do |list| %>
+        <li><a href="/lists/<%= list.id %>"><%= list.name %></li></a><br>
+    <% end %>
+</ul>
+
+<br>
+<h4>...our you can create your own!</h4>
