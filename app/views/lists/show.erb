@@ -1,0 +1,11 @@
+<h1><%= @list.name %></h1>
+
+<img src="<%= @list.image %>" alt="Bucket List image" width="300px" height="auto">
+<br><br>
+
+<p><%= @list.description %></p>
+<ol>
+    <% @list.to_do.split(",").each do |value| %>
+        <li><%= value %></li><br>
+    <% end %>
+</ol>
