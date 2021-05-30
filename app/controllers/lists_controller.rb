@@ -9,6 +9,11 @@ class ListsController < ApplicationController
         erb :'/lists/new'
     end
 
+    post '/lists' do
+        @list = List.create(name: params[:name], description: params[:description], to_do: params[:to_do], image: params[:image])
+        redirect "/lists/#{@list.id}"
+    end
+
     get '/lists/:id' do
         @list = List.find_by_id(params[:id])
         erb :'/lists/show'

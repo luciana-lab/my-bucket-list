@@ -18,7 +18,7 @@
 
 <strong><label for="update_list_to_do">Update List:</label></strong>
 <ol>
-<% @list.to_do.split(",").each do |value| %>
+    <% @list.to_do.split(",").each do |value| %>
         <li><%= value %></li>
     <% end %>
 </ol>

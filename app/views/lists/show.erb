@@ -6,6 +6,6 @@
 <p><%= @list.description %></p>
 <ol>
     <% @list.to_do.split(",").each do |value| %>
-        <li><%= value %></li><br>
+        <li><input type="checkbox"> <%= value %></li>
     <% end %>
 </ol>
