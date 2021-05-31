@@ -10,8 +10,16 @@
     <% end %>
 </ol>
 
+<% if @list.user_id != nil && @list.user == current_user %>
 <br><br>
-<form method="POST" action="/lists/<%= @list.id %>">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Bucket List">
-</form>
+
+    <form action="/lists/<%= @list.id %>/edit">
+        <input type="submit" value="Edit Bucket List">
+    </form>
+    <br>
+
+    <form method="POST" action="/lists/<%= @list.id %>">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete Bucket List">
+    </form>
+<% end %>
