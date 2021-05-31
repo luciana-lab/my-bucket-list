@@ -3,7 +3,7 @@
 
 <form method="POST" action="/lists">
 
-    <strong><label for="create_name">Bucket List Name:</label></strong>
+    <strong><label for="create_name">Bucket List Name</label></strong><span class="required">*</span>:
         <input type="text" id="create_name" name="name">
     <br><br>
 
@@ -12,7 +12,7 @@
     <br><br>
 
     <strong><label for="create_description">Description:</label></strong><br>
-        <textarea id="create_description" name="description" row="auto" cols="100" placeholder="Reasons to accomplish your bucket list"></textarea>
+        <textarea id="create_description" name="description" row="auto" cols="100" placeholder="Reasons to accomplish this bucket list"></textarea>
     <br><br>
 
     <strong><label for="create_to_do">Your List:</label></strong><br>
@@ -22,3 +22,6 @@
     <input type="submit" value="Create List">
 
 </form>
+
+<br><br>
+<span class="required">*</span>Required field

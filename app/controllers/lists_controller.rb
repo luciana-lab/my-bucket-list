@@ -20,7 +20,7 @@ class ListsController < ApplicationController
     end
 
     get '/lists/:id/edit' do
-        redirect_if_not_login
+        redirect_if_not_logged_in
         
         @list = List.find_by_id(params[:id])
         redirect_if_not_creator
@@ -29,7 +29,7 @@ class ListsController < ApplicationController
 
     patch '/lists/:id' do
 
-        redirect_if_not_login
+        redirect_if_not_logged_in
 
         @list = List.find_by_id(params[:id])
         redirect_if_not_creator
@@ -43,7 +43,7 @@ class ListsController < ApplicationController
     end
 
     post '/lists/:id/delete' do
-        redirect_if_not_login
+        redirect_if_not_logged_in
 
         @list = List.find_by_id(params[:id])
         redirect_if_not_creator
@@ -53,7 +53,7 @@ class ListsController < ApplicationController
 
     private
 
-    def redirect_if_not_login
+    def redirect_if_not_logged_in
         if !logged_in?
             redirect '/login'
         end
