@@ -8,7 +8,7 @@
         <input type="text" id="update_image" name="image" value="<%= @list.image %>">
     <br><br>
 
-    <strong><label for="update_list_name">Update Name</label></strong><span class="required">*</span>:<br>
+    <strong><label for="update_list_name">Update Name</label></strong><span class="required"><small>*</small></span>:<br>
         <%= @list.name %> <input type="text" id="update_list_name" name="name" value="<%= @list.name %>">
     <br><br>
 
@@ -29,4 +29,4 @@
 </form>
 
 <br><br>
-<span class="required">*</span>Required field
+<span class="required"><small>*</span>Required field</small>

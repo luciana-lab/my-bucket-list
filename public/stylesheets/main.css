@@ -1,3 +1,4 @@
+/* --- Navigation Bar Style --- */
 nav {
   width: 100%;
   background-color: white;
@@ -16,10 +17,6 @@ nav ul li {
   padding: 12px;
   line-height: 25px;
   border-radius: 4px;
-  /* padding-top: 20px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px; */
 }
 
 nav ul li a {
@@ -40,10 +37,6 @@ nav ul li a:hover::after {
 #logo {
   width: 45%;
   height: auto;
-  /* padding-left: 20px;
-  padding-right: 40px;
-  margin-right: 10px;
-  margin-top: -20px; */
 }
 
 #logo img {
@@ -51,6 +44,7 @@ nav ul li a:hover::after {
   height: auto;
 }
 
+/* --- Required star --- */
 .required
 {
   color: red;
@@ -70,9 +64,9 @@ nav ul li a:hover::after {
     width: 100%;
   }
 
-  /* --- Welcome Page Styles --- */
+  /* --- Home Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: #d1d1d1;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -114,19 +108,29 @@ nav ul li a:hover::after {
     overflow: hidden;
   }
 
-  .content {
-    width: 60%; /* 480px / 800px */
+  .quote {
+    text-align: center;
+    width: 70%;
+    margin: auto;
+  }
+  .quote blockquote {
+    font-style: italic;
+    border: none;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    display: inline;
+    text-align: justify;
   }
 
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
+  .quote blockquote:before {
+    content: open-quote;
+    font-weight: bold;
+    color: black;
   }
 
-  .sidebar ul {
-    font-size: 14px;
+  .quote blockquote:after {
+    content: close-quote;
+    font-weight: bold;
+    color: black;
   }
 
   .branding {
@@ -140,24 +144,48 @@ nav ul li a:hover::after {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.row .column img {
+  width: 100%;
+}
+
+.row .column p {
+  top: 10%;
+  background: rgba(115, 115, 115, 0.3);
+  color: #6c6c6c;
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (max-width: 600px) {
   .wrapper {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     width: auto;
-  }
-
-  .content, .sidebar {
-    float: none;
-    width: 100%;
-  }
-
-  .sidebar {
-    background: transparent;
-    border: none;
-    border-top: 2px solid #ccc;
-    padding: 0;
   }
 
   h1 {
