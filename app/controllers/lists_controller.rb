@@ -6,10 +6,13 @@ class ListsController < ApplicationController
     end
 
     get '/lists/new' do
+        redirect_if_not_logged_in
         erb :'/lists/new'
     end
 
     post '/lists' do
+        redirect_if_not_logged_in
+
         @list = List.create(name: params[:name], description: params[:description], to_do: params[:to_do], image: params[:image])
         redirect "/lists/#{@list.id}"
     end
