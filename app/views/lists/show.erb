@@ -1,9 +1,15 @@
-<h1><%= @list.name %></h1>
+<h2><%= @list.name %></h2>
 
-<img src="<%= @list.image %>" alt="Bucket List image" width="300px" height="auto">
-<br><br>
+    <div class="hero-image">
+    <img src="<%= @list.image %>">
+        <div class="hero-text">
+            <p><%= @list.description %></p>
+            <a href="/lists/new"><button>Create</button></a>
+        </div>
+    </div>
 
-<p><%= @list.description %></p>
+<br>
+
 <ol>
     <% @list.to_do.split(",").each do |value| %>
         <li><input type="checkbox"> <%= value %></li>
